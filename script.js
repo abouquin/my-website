@@ -60,7 +60,7 @@ const nebulaMaterial = new THREE.ShaderMaterial({
 const nebulaGeometry = new THREE.PlaneGeometry(window.innerWidth, window.innerHeight);
 
 const nebula = new THREE.Mesh(nebulaGeometry, nebulaMaterial);
-nebula.position.set(0, 0, -50);
+nebula.position.set(0, 0, -200);
 scene.add(nebula);
 
 // Create a spiral galaxy
