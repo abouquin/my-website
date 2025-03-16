@@ -70,9 +70,10 @@ const galaxyColors = [];
 const numStars = 5000;
 
 const starColors = [
-    [0.5, 0.4, 0.4], [0.45, 0.35, 0.35], [0.4, 0.3, 0.3],
-    [0.55, 0.45, 0.4], [0.5, 0.4, 0.35], [0.45, 0.35, 0.3],
-    [0.2, 0.8, 1.0], [0.15, 0.7, 0.9], [0.1, 0.6, 0.8] // More cyan blue stars
+    [0.5, 0.4, 0.4], [0.6, 0.3, 0.3], [0.7, 0.3, 0.3], // Red stars
+    [0.8, 0.5, 0.3], [0.9, 0.6, 0.2], [1.0, 0.7, 0.1], // Orange stars
+    [1.0, 0.9, 0.3], [0.9, 0.8, 0.2], [1.0, 0.8, 0.0], // Yellow stars
+    [0.2, 0.8, 1.0], [0.15, 0.7, 0.9], [0.1, 0.6, 0.8]  // Blue stars (kept fewer)
 ];
 
 for (let i = 0; i < numStars; i++) {
@@ -94,7 +95,7 @@ const galaxyMaterial = new THREE.ShaderMaterial({
         varying vec3 vColor;
         void main() {
             vColor = color;
-            gl_PointSize = 6.0; // Increase star size
+            gl_PointSize = 3.0; // Increase star size
             gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
     `,
@@ -103,7 +104,7 @@ const galaxyMaterial = new THREE.ShaderMaterial({
         void main() {
             float distanceToCenter = length(gl_PointCoord - vec2(0.5));
             float alpha = smoothstep(0.5, 0.1, distanceToCenter); // Softer glow effect
-            gl_FragColor = vec4(vColor * 1.2, alpha); // Glow intensity increased
+            gl_FragColor = vec4(vColor * 4.0, alpha); // Glow intensity increased
         }
     `,
     vertexColors: true,
