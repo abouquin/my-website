@@ -10,7 +10,8 @@
 /* Background & Canvas */
 body {
     background: black;
-    overflow-y: auto; /* Enables scrolling */
+    overflow-y: auto;
+    /* Enables scrolling */
     height: 100vh;
     position: relative;
 }
@@ -41,30 +42,58 @@ header p {
     font-size: 1.2rem;
 }
 
-/* Section Styling */
+/* Base Section Styling */
 section {
-    min-height: auto; /* Ensures sections take up full screen height */
+    min-height: auto;
     padding: 50px 20px;
     text-align: center;
-    background: rgba(20, 20, 20, 0.8);
-    margin: 20px auto;
+    margin: 20px auto 20px auto;
     width: 90%;
     max-width: 800px;
     border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
 }
 
-/* Mobile-Friendly Adjustments */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+/* Unique Animated Gradients for Each Section */
+#research {
+    background: linear-gradient(-45deg, rgba(10, 100, 220, 0.12), rgba(5, 60, 180, 0.12), rgba(0, 20, 140, 0.12));
+    background-size: 600% 600%;
+    animation: gradientBG 5s ease-in-out infinite;
+}
+
+#education {
+    background: linear-gradient(-45deg, rgba(150, 50, 220, 0.12), rgba(120, 30, 180, 0.12), rgba(90, 10, 140, 0.12));
+    background-size: 600% 600%;
+    animation: gradientBG 5s ease-in-out infinite;
+}
+
+#contact {
+    background: linear-gradient(-45deg, rgba(220, 100, 20, 0.12), rgba(180, 60, 10, 0.12), rgba(140, 30, 0, 0.12));
+    background-size: 600% 600%;
+    animation: gradientBG 5s ease-in-out infinite;
+}
+
+/* More Pronounced Animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
     }
 
-    header p {
-        font-size: 1rem;
+    25% {
+        background-position: 50% 0%;
     }
 
-    section {
-        padding: 40px 15px;
-        width: 95%;
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
