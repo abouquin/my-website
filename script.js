@@ -1,3 +1,4 @@
+console.log("Script loaded!");
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg'), antialias: true });
@@ -82,7 +83,7 @@ for (let i = 0; i < numStars; i++) {
     const x = distance * Math.cos(angle);
     const y = (Math.random() - 0.5) * 20;
     const z = distance * Math.sin(angle);
-    
+
     galaxyVertices.push(x, y, z);
     galaxyColors.push(...starColors[Math.floor(Math.random() * starColors.length)]);
 }
@@ -119,8 +120,8 @@ function onResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    
-    if (window.innerWidth < 600) { 
+
+    if (window.innerWidth < 600) {
         galaxy.position.y = -10; // Move slightly downward for better centering
     } else {
         galaxy.position.y = 0; // Reset for larger screens
@@ -143,14 +144,30 @@ function animate() {
     galaxy.rotation.y += 0.0002;
     galaxy.rotation.x += 0.0001;
     nebulaMaterial.uniforms.time.value += 0.004; // Slow it down (was 0.008)
-    
+
     // Apply mouse movement to rotation
     galaxy.rotation.x = mouseY * 0.5;
     galaxy.rotation.y += mouseX * 0.002;
     nebula.position.x = mouseX * 5;
     nebula.position.y = -mouseY * 5;
-    
+
     renderer.render(scene, camera);
 }
 
 animate();
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".clickable-section").forEach(section => {
+        section.addEventListener("click", function () {
+            window.location.href = this.dataset.url;
+        });
+    });
+
+    const backButton = document.querySelector(".back-button");
+    if (backButton) {
+        backButton.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+    }
+});
+
