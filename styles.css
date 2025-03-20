@@ -118,6 +118,10 @@ section {
     z-index: 2;
 }
 
+ul {
+    text-align: left;
+}
+
 #about {
     background: linear-gradient(-45deg, rgba(0, 255, 255, 0.2), rgba(0, 180, 255, 0.2), rgba(0, 100, 255, 0.2));
     background-size: 400% 400%;
@@ -227,19 +231,23 @@ h2:hover {
 
 @media screen and (max-width: 375px) {
     html {
-        font-size: 14px; /* Scale everything down */
+        font-size: 14px;
+        /* Scale everything down */
     }
 
     header h1 {
-        font-size: 1.8rem; /* Reduce title size */
+        font-size: 1.8rem;
+        /* Reduce title size */
     }
 
     header p {
-        font-size: 1rem; /* Reduce subtitle size */
+        font-size: 1rem;
+        /* Reduce subtitle size */
     }
 
     section h2 {
-        font-size: 1.5rem; /* Keep section titles readable */
+        font-size: 1.5rem;
+        /* Keep section titles readable */
     }
 
     section p {
