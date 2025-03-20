@@ -118,29 +118,36 @@ section {
     z-index: 2;
 }
 
-/* Unique Animated Gradients for Each Section */
+#about {
+    background: linear-gradient(-45deg, rgba(0, 255, 255, 0.2), rgba(0, 180, 255, 0.2), rgba(0, 100, 255, 0.2));
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease-in-out infinite;
+    border: 2px solid cyan;
+    box-shadow: 0px 0px 20px cyan;
+}
+
 #research {
-    background: linear-gradient(-45deg, rgba(10, 100, 220, 0.12), rgba(5, 60, 180, 0.12), rgba(0, 20, 140, 0.12));
-    background-size: 600% 600%;
-    animation: gradientBG 5s ease-in-out infinite;
-    border-color: cyan;
-    box-shadow: 0px 0px 15px cyan;
+    background: linear-gradient(-45deg, rgba(255, 0, 255, 0.2), rgba(200, 0, 200, 0.2), rgba(150, 0, 150, 0.2));
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease-in-out infinite;
+    border: 2px solid magenta;
+    box-shadow: 0px 0px 20px magenta;
 }
 
 #education {
-    background: linear-gradient(-45deg, rgba(150, 50, 220, 0.12), rgba(120, 30, 180, 0.12), rgba(90, 10, 140, 0.12));
-    background-size: 600% 600%;
-    animation: gradientBG 5s ease-in-out infinite;
-    border-color: magenta;
-    box-shadow: 0px 0px 15px magenta;
+    background: linear-gradient(-45deg, rgba(255, 50, 150, 0.2), rgba(200, 30, 120, 0.2), rgba(150, 10, 90, 0.2));
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease-in-out infinite;
+    border: 2px solid hotpink;
+    box-shadow: 0px 0px 20px hotpink;
 }
 
 #contact {
-    background: linear-gradient(-45deg, rgba(220, 100, 20, 0.12), rgba(180, 60, 10, 0.12), rgba(140, 30, 0, 0.12));
-    background-size: 600% 600%;
-    animation: gradientBG 5s ease-in-out infinite;
-    border-color: orange;
-    box-shadow: 0px 0px 15px orange;
+    background: linear-gradient(-45deg, rgba(255, 165, 0, 0.2), rgba(255, 120, 0, 0.2), rgba(255, 80, 0, 0.2));
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease-in-out infinite;
+    border: 2px solid orange;
+    box-shadow: 0px 0px 20px orange;
 }
 
 /* More Pronounced Animation */

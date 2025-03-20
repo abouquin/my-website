@@ -169,5 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "index.html";
         });
     }
+
+    const gameButton = document.querySelector(".game-button");
+    if (gameButton) {
+        gameButton.addEventListener("click", function () {
+            window.location.href = "game.html";
+        });
+    }
 });
 
